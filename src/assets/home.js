@@ -26,7 +26,7 @@ function home(props) {
             <div className="home_info">
                 <h2>Let's now shop for daily food & necessary.</h2>
                 <p>Freshness and Speed at your Fingertips: <br />Get groceries delivered in 30 minutes with our website or mobile app.</p>
-                <button className="shopnow" >Shop Now</button>
+                <a href="#flash_sales"><button className="shopnow">Shop Now</button></a>
             </div>
             <div className="services">
               <div className="support">
@@ -70,7 +70,7 @@ function home(props) {
                   <img src={fruit} alt="" className='fruit_img'/>
                   <div className='fruit_det'>
                     <p>Fresh Fruit Super Sale</p>
-                    <button className='fruit_button'>Shop Now</button>
+                    <a href="#first_items"><button className='fruit_button'>Shop Now</button></a>
                   </div>
                 </div>
                 <div className="juice">
@@ -82,7 +82,7 @@ function home(props) {
 
 
 
-            <div className="flash_sales">
+            <div className="flash_sales" id='flash_sales'>
               <h2>Flash Sales</h2>
               <div className="days">
                 <div className="day">

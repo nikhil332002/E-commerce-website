@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import orange_1 from './img/orange_1.png';
 import orange_2 from './img/orange_2.png';
 import orange_3 from './img/orange_3.png';
@@ -6,8 +6,21 @@ import orange from './img/orange.png';
 import facebook from './img/facebook.png';
 import twitter from './img/twitter.png';
 import insta from './img/insta.png';
+import { Link } from 'react-router-dom';
 
-function orange_info(props) {
+
+function Orange_info() {  
+  const [quantity,setquantity]=useState(1);
+  const handledecrement=()=>{
+    if(quantity > 1){
+    setquantity(prevcount => prevcount -1);
+    }
+  }
+  const handleincrement=()=>{
+    setquantity(prevcount => prevcount +1);
+  }
+
+
   return (
     <>
       <div className="orange_box">
@@ -16,6 +29,7 @@ function orange_info(props) {
             <img src={orange_2} alt="" className='orange_all'/>
             <img src={orange_3} alt="" className='orange_all'/>
         </div>
+      
         <div className="box-2">
             <img src={orange} alt="" />
         </div>
@@ -28,12 +42,12 @@ function orange_info(props) {
             <p>(inclusive of all taxes)</p>
             <h3>Quantity</h3>
             <div className="quantity">
-                <button id='minus'>-</button>
-                <p id='one'>1</p>
-                <button id='plus'>+</button>
+                <button id='minus' onClick={handledecrement}>-</button>
+                <p id='one'>{quantity}</p>
+                <button id='plus' onClick={handleincrement}>+</button>
                 <button className='add_to_c'>Add to Cart</button>
             </div>
-            <button className='buy_now'>Buy Now</button>
+            <Link to='/Cart'><button className='buy_now'>Buy Now</button></Link>
             <p>Share: <img src={facebook} alt="" className='share'/><img src={twitter} alt="" className='share'/><img src={insta} alt="" className='share'/></p>
         </div>
       </div>
@@ -83,4 +97,4 @@ function orange_info(props) {
   )
 }
 
-export default orange_info
+export default Orange_info;
